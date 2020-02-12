@@ -1,0 +1,1 @@
+{"keyboard":"namecard2x4/rev1","keymap":"namecard2x4_rev1_clipstudio","layout":"LAYOUT","layers":[["KC_P","KC_E","KC_I","ANY(LT(1,KC_RBRC))","KC_B","KC_G","LSFT(KC_Q)","ANY(LT(2,KC_LBRC))"],["LCTL(KC_PLUS)","LCA_T(KC_0)","KC_MINS","KC_TRNS","LCTL(KC_MINS)","LCTL(KC_0)","KC_CIRC","KC_SPC"],["KC_UNDO","KC_COPY","KC_CUT","LCTL(KC_S)","C_S_T(KC_Z)","KC_PSTE","KC_BSPC","KC_TRNS"]]}
