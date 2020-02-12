@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       RESET,   _______, KC_UP,   _______,  _______, _______,                   KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______, \
       _______, KC_LEFT, KC_DOWN, KC_RGHT,  _______, _______,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, \
       _______, _______, _______, AU_ON,    AU_OFF,  _______, AG_NORM, AG_SWAP, _______, _______, _______, RGB_HUI, RGB_SAI, RGB_VAI, \
-      _______, RGB_RST, RGB_TOG, RGB_SMOD, _______, KC_BSPC, _______, _______, KC_ENT,  _______, _______, RGB_HUD, RGB_SAD, RGB_VAD  \
+      _______, RGB_RST, RGB_TOG, RGB_MOD,  _______, KC_BSPC, _______, _______, KC_ENT,  _______, _______, RGB_HUD, RGB_SAD, RGB_VAD  \
       )
 };
 
@@ -208,7 +208,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, RESET,   _______, _______, _______, _______,                   _______, _______, _______, _______, _______, KC_DEL, \
       _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM,                   AG_SWAP, _______, _______, _______,  _______, _______, \
       _______, _______, _______, _______, _______, _______,                   _______, _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD \
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD \
       )
 };
 
@@ -280,10 +280,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return change_layer_onpress(_ADJUST, record, false);
       break;
     case EISU:
-      return lang_key_onpress(KC_LANG2);
+      return lang_key_onpress(KC_LANG2, record);
       break;
     case KANA:
-      return lang_key_onpress(KC_LANG1);
+      return lang_key_onpress(KC_LANG1, record);
       break;
     case RGB_MOD:
       #ifdef RGBLIGHT_ENABLE

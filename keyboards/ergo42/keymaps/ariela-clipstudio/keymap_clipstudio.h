@@ -163,25 +163,25 @@
     // 表示メニュー
     #define CS_CANVAS_ROTATE_LEFT               KC_MINS // 左回転
     #define CS_CANVAS_ROTATE_RIGHT              KC_EQL // 右回転
-    #define CS_CANVAS_ZOOM_IN                   LCTL(KC_KP_PLUS) // ズームイン
+    #define CS_CANVAS_ZOOM_IN_WIN               LCTL(KC_KP_PLUS) // ズームイン
     #define CS_CANVAS_ZOOM_IN_MAC               LGUI(KC_KP_PLUS) // ズームイン(MacOS)
-    #define CS_CANVAS_ZOOM_OUT                  LCTL(KC_KP_MINUS) // ズームアウト
+    #define CS_CANVAS_ZOOM_OUT_WIN              LCTL(KC_KP_MINUS) // ズームアウト
     #define CS_CANVAS_ZOOM_OUT_MAC              LGUI(KC_KP_MINUS) // ズームアウト(MacOS)
-    #define CS_CANVAS_DISPLAY_100P              LCTL(LALT(KC_0)) // 100%表示
+    #define CS_CANVAS_DISPLAY_100P_WIN          LCTL(LALT(KC_0)) // 100%表示
     #define CS_CANVAS_DISPLAY_100P_MAC          LGUI(LALT(KC_0)) // 100%表示(MacOS)
-    #define CS_CANVAS_DISPLAY_OVERALL           LCTL(KC_0) // 全体表示
+    #define CS_CANVAS_DISPLAY_OVERALL_WIN       LCTL(KC_0) // 全体表示
     #define CS_CANVAS_DISPLAY_OVERALL_MAC       LGUI(KC_0) // 全体表示(MacOS)
-    #define CS_CANVAS_POSITION_RESET            LCTL(KC_LBRC) // 表示位置をリセット
+    #define CS_CANVAS_POSITION_RESET_WIN        LCTL(KC_LBRC) // 表示位置をリセット
     #define CS_CANVAS_POSITION_RESET_MAC        LGUI(KC_LBRC) // 表示位置をリセット(MacOS)
-    #define CS_CANVAS_RULER                     LCTL(KC_R) // ルーラー
+    #define CS_CANVAS_RULER_WIN                 LCTL(KC_R) // ルーラー
     #define CS_CANVAS_RULER_MAC                 LGUI(KC_R) // ルーラー(MacOS)
-    #define CS_CANVAS_SNAP_RULER                LCTL(KC_1) // 定規にスナップ
+    #define CS_CANVAS_SNAP_RULER_WIN            LCTL(KC_1) // 定規にスナップ
     #define CS_CANVAS_SNAP_RULER_MAC            LGUI(KC_1) // 定規にスナップ(MacOS)
-    #define CS_CANVAS_SNAP_SPECIAL_RULER        LCTL(KC_2) // 特殊定規にスナップ
+    #define CS_CANVAS_SNAP_SPECIAL_RULER_WIN    LCTL(KC_2) // 特殊定規にスナップ
     #define CS_CANVAS_SNAP_SPECIAL_RULER_MAC    LGUI(KC_2) // 特殊定規にスナップ(MacOS)
-    #define CS_CANVAS_SNAP_GRID                 LCTL(KC_3) // グリッドにスナップ
+    #define CS_CANVAS_SNAP_GRID_WIN             LCTL(KC_3) // グリッドにスナップ
     #define CS_CANVAS_SNAP_GRID_MAC             LGUI(KC_3) // グリッドにスナップ(MacOS)
-    #define CS_CANVAS_SNAP_SR_CHANGE            LCTL(KC_4) // スナップする特殊定規の切り替え
+    #define CS_CANVAS_SNAP_SR_CHANGE_WIN        LCTL(KC_4) // スナップする特殊定規の切り替え
     #define CS_CANVAS_SNAP_SR_CHANGE_MAC        LGUI(KC_4) // スナップする特殊定規の切り替え(MacOS)
     #ifdef MODE_MAC
         #define CS_CANVAS_ZOOM_IN               CS_CANVAS_ZOOM_IN_MAC               // ズームイン
