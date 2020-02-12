@@ -4,8 +4,8 @@
 #undef TAPPING_TERM
 #define TAPPING_TERM 150
 
-#define _______ KC_TRNS
-#define XXXXXXX KC_NO
+#define _______ KC_TRNS // 下位レイヤーのキーコードを使用
+#define XXXXXXX KC_NO   // キーを無効にする
 
 void persistent_default_layer_set(uint16_t default_layer);
 bool lang_key_onpress(uint16_t keycode, keyrecord_t *record);

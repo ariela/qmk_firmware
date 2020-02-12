@@ -24,6 +24,7 @@
 #include "ws2812.h"
 #endif
 
+#undef RGBLED_NUM
 #define RGBLED_NUM 1
 
 #if defined(RGBLIGHT_ENABLE) && !defined(IOS_DEVICE_ENABLE)
