@@ -131,64 +131,6 @@ static uint16_t u_pressed_lower_time = 0;
 static uint16_t u_pressed_raise_time = 0;
 
 //--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
-// 関数定義
-//--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
-
-/**
- * キー処理実行時ユーザ定義
- */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    bool result;
-    if (record->event.pressed) {
-        #ifdef SSD1306OLED
-        set_keylog(keycode, record);
-        #endif
-        // set_timelog();
-    }
-
-    switch (keycode) {
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-            break;
-        case LOWER:
-            result = change_layer_onpress_with_tap_and_trilayer(_LOWER, KC_LANG2, record, &u_pressed_lower, &u_pressed_lower_time, _LOWER, _RAISE, _ADJUST);
-            if (record->event.pressed) {
-                // 他のキーのタップ機能を停止させる
-                u_pressed_raise = false; 
-            }
-            return result;
-            break;
-        case RAISE:
-            result = change_layer_onpress_with_tap_and_trilayer(_RAISE, KC_LANG1, record, &u_pressed_raise, &u_pressed_raise_time, _LOWER, _RAISE, _ADJUST);
-            if (record->event.pressed) {
-                // 他のキーのタップ機能を停止させる
-                u_pressed_lower = false;
-            }
-            return result;
-            break;
-        case EISU:
-            return lang_key_onpress(KC_LANG2, record);
-            break;
-        case KANA:
-            return lang_key_onpress(KC_LANG1, record);
-            break;
-        default:
-            if (record->event.pressed) {
-                // タップ対応キーと他のキーが同時押しされた場合はタップ機能を停止させる
-                u_pressed_lower = false;
-                u_pressed_raise = false;
-            }
-            break;
-    }
-  
-    // キー入力パススルー
-    return true;
-}
-
-//--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
 // OLED関連関数定義
 //--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
 
@@ -253,3 +195,61 @@ void iota_gfx_task_user(void) {
 }
 
 #endif//SSD1306OLED
+
+//--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
+// 関数定義
+//--+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0
+
+/**
+ * キー処理実行時ユーザ定義
+ */
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    bool result;
+    if (record->event.pressed) {
+        #ifdef SSD1306OLED
+        set_keylog(keycode, record);
+        #endif
+        // set_timelog();
+    }
+
+    switch (keycode) {
+        case QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+            break;
+        case LOWER:
+            result = change_layer_onpress_with_tap_and_trilayer(_LOWER, KC_LANG2, record, &u_pressed_lower, &u_pressed_lower_time, _LOWER, _RAISE, _ADJUST);
+            if (record->event.pressed) {
+                // 他のキーのタップ機能を停止させる
+                u_pressed_raise = false;
+            }
+            return result;
+            break;
+        case RAISE:
+            result = change_layer_onpress_with_tap_and_trilayer(_RAISE, KC_LANG1, record, &u_pressed_raise, &u_pressed_raise_time, _LOWER, _RAISE, _ADJUST);
+            if (record->event.pressed) {
+                // 他のキーのタップ機能を停止させる
+                u_pressed_lower = false;
+            }
+            return result;
+            break;
+        case EISU:
+            return lang_key_onpress(KC_LANG2, record);
+            break;
+        case KANA:
+            return lang_key_onpress(KC_LANG1, record);
+            break;
+        default:
+            if (record->event.pressed) {
+                // タップ対応キーと他のキーが同時押しされた場合はタップ機能を停止させる
+                u_pressed_lower = false;
+                u_pressed_raise = false;
+            }
+            break;
+    }
+
+    // キー入力パススルー
+    return true;
+}
